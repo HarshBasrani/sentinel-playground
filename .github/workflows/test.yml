@@ -1,0 +1,16 @@
+name: Sentinel Test
+on: [pull_request]
+
+jobs:
+  test-sentinel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # THIS IS YOUR ACTION
+      - name: Run Ghost Killer
+        uses: HarshBasrani/sentinel-action@v0.1.0
+        with:
+          tsconfig_path: "tsconfig.json"
+          source_globs: "src/**/*.{ts,tsx,js,jsx}"
+          ignore_packages: ""
