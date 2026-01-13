@@ -9,7 +9,7 @@ jobs:
 
       # THIS IS YOUR ACTION
       - name: Run Ghost Killer
-        uses: HarshBasrani/sentinel-action@v0.2.0
+        uses: HarshBasrani/sentinel-action@v0.2.1
         with:
           tsconfig_path: "tsconfig.json"
           source_globs: "src/**/*.{ts,tsx,js,jsx}"
