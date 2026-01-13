@@ -11,11 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Run Sentinel
+
+        - name: Run Sentinel
         uses: HarshBasrani/sentinel-action@v0.2.1
         with:
           tsconfig_path: 'tsconfig.json'
           source_globs: 'src/**/*.{ts,tsx,js,jsx}'
-          # 2. THE TOKEN (Just copy this line exactly)
           github_token: ${{ secrets.GITHUB_TOKEN }}
