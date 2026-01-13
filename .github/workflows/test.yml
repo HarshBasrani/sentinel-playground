@@ -1,7 +1,6 @@
 name: Sentinel Test
-on: [pull_request]
+on: [pull_request, workflow_dispatch]
 
-# 1. PERMISSIONS (Gives the bot the right to speak)
 permissions:
   pull-requests: write
   contents: read
@@ -11,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-        - name: Run Sentinel
+      
+      - name: Run Sentinel
         uses: HarshBasrani/sentinel-action@v0.2.1
         with:
           tsconfig_path: 'tsconfig.json'
