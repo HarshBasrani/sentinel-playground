@@ -1,7 +1,7 @@
 {
   "name": "sentinel-playground",
   "version": "1.0.0",
-  "description": "Test project for Sentinel Ghost Killer.",
+  "description": "Test project for Sentinel Ghost Killer .",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Test passed\""
