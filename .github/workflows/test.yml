@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run Sentinel
-        uses: HarshBasrani/sentinel-action@v0.3.0  # <--- Update Version
+        uses: HarshBasrani/sentinel-action@v0.3.1  # <--- Update this
         with:
           tsconfig_path: 'tsconfig.json'
           source_globs: 'src/**/*.{ts,tsx,js,jsx}'
