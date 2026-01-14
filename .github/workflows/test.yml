@@ -12,8 +12,11 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run Sentinel
-        uses: HarshBasrani/sentinel-action@v0.2.1
+        uses: HarshBasrani/sentinel-action@v0.3.0  # <--- Update Version
         with:
           tsconfig_path: 'tsconfig.json'
           source_globs: 'src/**/*.{ts,tsx,js,jsx}'
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # --- NEW INPUTS ---
+          dashboard_url: ${{ secrets.SENTINEL_URL }}
+          project_token: ${{ secrets.SENTINEL_TOKEN }}
