@@ -1,16 +1,22 @@
 name: Sentinel Test
-on: [pull_request]
+on: [pull_request, workflow_dispatch]
+
+permissions:
+  pull-requests: write
+  contents: read
 
 jobs:
   test-sentinel:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      # THIS IS YOUR ACTION
-      - name: Run Ghost Killer
-        uses: HarshBasrani/sentinel-action@v0.2.1
+      
+      - name: Run Sentinel
+        uses: HarshBasrani/sentinel-action@v0.3.2
         with:
-          tsconfig_path: "tsconfig.json"
-          source_globs: "src/**/*.{ts,tsx,js,jsx}"
-          ignore_packages: ""
+          tsconfig_path: 'tsconfig.json'
+          source_globs: 'src/**/*.{ts,tsx,js,jsx}'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # --- NEW INPUTS ---
+          dashboard_url: ${{ secrets.SENTINEL_URL }}
+          project_token: ${{ secrets.SENTINEL_TOKEN }}
